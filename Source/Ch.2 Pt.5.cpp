@@ -47,10 +47,42 @@ struct CarWash            //1) a U.D.T. with a random number of member variables
 /*
 1)
 */
+struct woman
+{
+	bool hasChildren = true;
+	int age = 36;
+	double lengthOfTimeMarried = 8.03;
+
+	struct wife
+	{
+		char name = 'Jolyne';
+		bool bornInUSA = false;
+	};
+
+	void makesBed(mattress sheets)
+
+	mattress kingSize;
+};
 
 /*
 2)
 */
+struct business
+{
+	bool isLLC = false;
+	int numberOfEmployees = 32;
+	float monthlyIncome = 754.68f;
+
+	struct manager
+	{
+		int timeEmployed = 1460;
+		float hoursPerDay = 11.30;
+	};
+
+	void customerAppreciationDay(saturday weekend);
+
+	saturday 12 - 4;
+};
 
 /*
 3)
