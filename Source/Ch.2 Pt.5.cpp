@@ -81,16 +81,50 @@ struct business
 
 	void customerAppreciationDay(saturday weekend);
 
-	saturday 12 - 4;
+	saturday 12 through 4;
 };
 
 /*
 3)
 */
+struct excercise
+{
+    int perWeek = 3;
+    int howLong = 1;
+    bool liftsWeights = false;
+    
+    struct workout
+    {
+        bool cardio = true;
+        bool swimming = true;
+        float distance = 12.345f;
+    };
+    
+    void routines(treadmill, swimming, cycling);
+    
+    routines myRoutine;
+};
 
 /*
 4)
 */
+struct child
+{
+    int shoeSize = 12;
+    float height = 109.728f;
+    int gradeLevel = 1;
+    
+    struct Santana
+    {
+        int siblings = 0;
+        bool isBoy = true;
+    };
+    
+    void doesHomework(writing, reading);
+    
+    writing spellingAndHandwriting;
+    
+};
 
 /*
 5)

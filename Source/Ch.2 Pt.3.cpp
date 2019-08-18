@@ -65,15 +65,13 @@ float amountOfSaturation = 65.49f;
 float monitorVolume = 81.66f;
 float mixKnob = 34.78f;
 
-char myName[] = 'Casthely';
-char myRecordingRig[] = 'Windows10';
-char midiController[] = 'MPD218';
+char myName = 'C';
+char myRecordingRig = 'W';
+char midiController = 'M';
 
 double sizeOfFlorida = 65.755;
 double sizeOfUSCoin = 1.287;
 double distanceToMoon = 238.855;
-
-
 
 /*
 3)
@@ -96,8 +94,8 @@ getHeight(6, 4);
 /*
 6)
 */
-void C++(bool takingCourses);
-C++(true);
+void cPlusPlus(bool takingCourses);
+cPlusPlus(true);
 
 /*
 7)
@@ -114,8 +112,8 @@ recordingVocals(false, -15);
 /*
 9)
 */
-void micDimensions(float weightOfMic, bool isSmall)
-micDimensions(326.00f, false);
+void micDimensions(float weightOfMic, bool isSmall);
+micDimensions(326.f, false);
 
 /*
 10)
