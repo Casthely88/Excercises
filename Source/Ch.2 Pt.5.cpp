@@ -47,89 +47,92 @@ struct CarWash            //1) a U.D.T. with a random number of member variables
 /*
 1)
 */
-struct woman
+struct Woman
 {
 	bool hasChildren = true;
 	int age = 36;
 	double lengthOfTimeMarried = 8.03;
+	int mattress = 1;
 
-	struct wife
+	struct Wife
 	{
 		char name = 'J';
 		bool bornInUSA = false;
 	};
 
-	void makesBed(mattress sheets);
+	void makesBed(Woman Wife);
 
-	mattress kingSize;
+	Wife myWife;
+
 };
 
 /*
 2)
 */
-struct business
+struct Business
 {
 	bool isLLC = false;
 	int numberOfEmployees = 32;
 	float monthlyIncome = 754.68f;
+	bool customerAppreciationDaySaturday = true;
 
-	struct manager
+	struct Manager
 	{
 		int timeEmployed = 1460;
-		float hoursPerDay = 11.30;
+		float hoursPerDay = 11.30f;
 	};
 
-	void customerAppreciationDay(saturday weekend);
+	void customerAppreciationDay(Business Manager);
 
-	saturday 12 through 4;
+	Manager myManager;
 };
 
 /*
 3)
 */
-struct excercise
+struct Excercise
 {
-    int perWeek = 3;
-    int howLong = 1;
-    bool liftsWeights = false;
-    
-    struct workout
-    {
-        bool cardio = true;
-        bool swimming = true;
-        float distance = 12.345f;
-    };
-    
-    void routines(treadmill, swimming, cycling);
-    
-    routines myRoutine;
+	int perWeek = 3;
+	int howLong = 1;
+	bool liftsWeights = false;
+
+	struct Workout
+	{
+		bool cardio = true;
+		bool swimming = true;
+		float distance = 12.345f;
+	};
+
+	void routine(Workout);
+
+	Workout myWorkout;
 };
 
 /*
 4)
 */
-struct child
+struct Child
 {
-    int shoeSize = 12;
-    float height = 109.728f;
-    int gradeLevel = 1;
-    
-    struct Santana
-    {
-        int siblings = 0;
-        bool isBoy = true;
-    };
-    
-    void doesHomework(writing, reading);
-    
-    writing spellingAndHandwriting;
-    
+	int shoeSize = 12;
+	float height = 109.728f;
+	int gradeLevel = 1;
+
+	struct Santana
+	{
+		int siblings = 0;
+		bool isBoy = true;
+	};
+
+	void doesHomework(Child, Santana);
+
+	Santana mySon;
+
 };
 
 /*
 5)
 */
-struct midiKeyboard
+struct MidiKeyboard
 {
 	bool hasPads = true;
 	bool hasKeys = true;
@@ -140,8 +143,8 @@ struct midiKeyboard
 		int pads = 16;
 		int knobs = 6;
 	};
-	
-	void programsDrums( drumPatterns );
+
+	void programsDrums(MPD218);
 };
 
 /*
@@ -152,29 +155,31 @@ struct DigitalAudioWorkstation
 	int tracks = 45;
 	bool routedToBuss = true;
 	int effectsPerBuss = 3;
+	int recordVocals = 23;
+	int instruments = 2;
 
-	struct plugins
+	struct Plugins
 	{
 		bool VST = true;
 		bool AU = false;
 		int bit = 64;
 	};
 
-	void recording(vocals, instruments);
+	void recording(DigitalAudioWorkstation, Plugins);
 
-	vocals male;
+	Plugins myMusic;
 };
 
 /*
 7)
 */
-struct electronic
+struct Electronic
 {
 	bool useElectricity = true;
 	double lengthOfCharge = 23.578;
 	char manufacturer = 'S';
 
-	struct phone
+	struct Phone
 	{
 		int screen = 1;
 		bool pushButtons = false;
@@ -187,7 +192,7 @@ struct electronic
 /*
 8)
 */
-struct building
+struct Building
 {
 	int windows = 29;
 	int doors = 10;
@@ -199,7 +204,7 @@ struct building
 /*
  9)
  */
-struct deadboltLock
+struct DeadboltLock
 {
 	int pads = 10;
 	bool electronic = true;
@@ -209,12 +214,13 @@ struct deadboltLock
 /*
 10)
 */
-struct microphone
+struct Microphone
 {
 	int capsule = 1;
 	int xlrInput = 1;
 	int SPL = 144;
 };
+
 #include <iostream>
 int main()
 {
