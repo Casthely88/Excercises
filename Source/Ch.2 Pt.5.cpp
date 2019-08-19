@@ -55,11 +55,11 @@ struct woman
 
 	struct wife
 	{
-		char name = 'Jolyne';
+		char name = 'J';
 		bool bornInUSA = false;
 	};
 
-	void makesBed(mattress sheets)
+	void makesBed(mattress sheets);
 
 	mattress kingSize;
 };
@@ -129,27 +129,92 @@ struct child
 /*
 5)
 */
+struct midiKeyboard
+{
+	bool hasPads = true;
+	bool hasKeys = true;
+	int usbPorts = 1;
+
+	struct MPD218
+	{
+		int pads = 16;
+		int knobs = 6;
+	};
+	
+	void programsDrums( drumPatterns );
+};
 
 /*
 6)
 */
+struct DigitalAudioWorkstation
+{
+	int tracks = 45;
+	bool routedToBuss = true;
+	int effectsPerBuss = 3;
+
+	struct plugins
+	{
+		bool VST = true;
+		bool AU = false;
+		int bit = 64;
+	};
+
+	void recording(vocals, instruments);
+
+	vocals male;
+};
 
 /*
 7)
 */
+struct electronic
+{
+	bool useElectricity = true;
+	double lengthOfCharge = 23.578;
+	char manufacturer = 'S';
+
+	struct phone
+	{
+		int screen = 1;
+		bool pushButtons = false;
+		int chargePort = 1;
+	};
+
+	void communicationDevice(bool PCS = true, int frequency = 800);
+};
 
 /*
 8)
 */
+struct building
+{
+	int windows = 29;
+	int doors = 10;
+	int rooms = 5;
+};
 
-/*		
- 9)		
- */		
+
+
+/*
+ 9)
+ */
+struct deadboltLock
+{
+	int pads = 10;
+	bool electronic = true;
+	bool keyEntry = false;
+};
 
 /*
 10)
-/
-
+*/
+struct microphone
+{
+	int capsule = 1;
+	int xlrInput = 1;
+	int SPL = 144;
+};
 #include <iostream>
 int main()
 {
