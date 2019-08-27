@@ -23,6 +23,8 @@
  */
 
 #include <iostream>
+#include <string>
+
 struct Foo  // my user defined type
 {
 	int a; //a member variable
@@ -41,56 +43,50 @@ int main()
 
 struct Foot
 {
-    void stepForward();
-    int stepSize();
-    int sizeOfFoot = 0;
+	void stepForward();
+	int stepSize();
+	int sizeOfFoot();
 };
 
-void Foot::stepForward()
-{
-    sizeOfFoot += 12;
-}
+void Foot::stepForward() {}
 
-int Foot::stepSize()
-{
-    return sizeOfFoot;
-    
-}
+int Foot::stepSize() { return 13; }
 
 struct Person
 {
-    int age = 31;
-    int height = 193;
-    float hairLength = 5.08f;
-    float GPA = 4.02f;
-    unsigned int SATScore = 1200;
-    int distanceTraveled;
-    
-    Person()
-    {
-        distanceTraveled = 0;
-    }
-    
-    void run(int howFast, bool startWithLeftFoot);
-    
-    Foot leftFoot;
-    Foot rightFoot;
+	int age = 31;
+	int height = 193;
+	float hairLength = 5.08f;
+	float GPA = 4.02f;
+	unsigned int SATScore = 1200;
+	int distanceTraveled;
+
+	Person()
+	{
+		distanceTraveled = 0;
+	}
+
+	void run(int howFast, bool startWithLeftFoot);
+
+	Foot leftFoot;
+	Foot rightFoot;
 };
 
 void Person::run(int howFast, bool startWithLeftFoot)
 {
-    if (startWithLeftFoot == true)
-    {
-        leftFoot.stepForward();
-        rightFoot.stepForward();
-    }
-    else
-    {
-        rightFoot.stepForward();
-        leftFoot.stepForward();
-    }
-    
-    distanceTraveled += leftFoot.stepSize() + rightFoot.stepSize();
+	if (startWithLeftFoot == true)
+	{
+		leftFoot.stepForward();
+		rightFoot.stepForward();
+	}
+	else
+	{
+		rightFoot.stepForward();
+		leftFoot.stepForward();
+	}
+
+	distanceTraveled += leftFoot.stepSize() + rightFoot.stepSize();
+	std::cout << "Person::age: " << distanceTraveled << std::endl;
 }
 
 /*
@@ -99,18 +95,28 @@ void Person::run(int howFast, bool startWithLeftFoot)
 
 struct Plane
 {
-    double weight = 386.265;
-    int seats = 286;
-    int litersOfFuel = 184;
-    
-    struct Pilot
-    {
-        int numberOfPilots = 2;
-        bool sleepy = false;
-        int flights = 386;
-    };
-    
-    Pilot marcus;
+	double weight = 386.265;
+	int seats;
+	int litersOfFuel = 184;
+
+	Plane()
+	{
+		seats = 286;
+	}
+
+	struct Pilot
+	{
+		int numberOfPilots = 2;
+		bool sleepy = false;
+		int flights = 386;
+	};
+
+	void Marcus(Pilot pilot)
+	{
+
+		std::cout << "Plane::weight " << pilot.sleepy << std::endl;
+
+	};
 };
 
 /*
@@ -119,15 +125,28 @@ struct Plane
 
 struct Athelete
 {
-    int age = 30;
-    int points = 15386;
-    bool football = false;
-    bool jumpShots = true;
-    bool layups = true;
-    float pointsPerGame = 24.6f;
-    
-    void scoring();
-    
+	int age;
+	int points = 15386;
+	bool football = false;
+	bool jumpShots = true;
+	bool layups;
+	float pointsPerGame;
+
+	Athelete()
+	{
+		age = 30;
+		pointsPerGame = 24.6f;
+		layups = true;
+	}
+
+	void Alan(Athelete athelete)
+
+	{
+		std::cout << "Athelete::pointPerGame: " << athelete.age << std::endl;
+	}
+
+	void scoring();
+
 };
 
 /*
@@ -136,8 +155,8 @@ struct Athelete
 
 struct Pay
 {
-    void halfBusinessDay();
-    int timeAndAhHalf();
+	void halfBusinessDay();
+	int timeAndAhHalf();
 };
 
 void Pay::halfBusinessDay() {}
@@ -145,33 +164,46 @@ int Pay::timeAndAhHalf() { return 2; }
 
 struct Employee
 {
-    bool manager = false;
-    bool supervisor = true;
-    int daysPerWeek = 5;
-    float paycheck = 535.73f;
-    int holidayPay;
-    
-    void overtime(float howMuchTime, bool holidays);
-    
-    Pay thanksgiving;
-    Pay christmas;
-    
+	bool manager = false;
+	bool supervisor = true;
+	int daysPerWeek = 5;
+	float paycheck = 535.73f;
+	int holidayPay;
+	char workerRating;
+	int lengthOfEmployment;
+
+	Employee()
+	{
+		workerRating = 'B';
+		lengthOfEmployment = 15;
+	}
+
+	void Alan(Employee employee)
+	{
+		std::cout << "Employee::name: " << employee.lengthOfEmployment << std::endl;
+	}
+
+	void overtime(float howMuchTime, bool holidays);
+
+	Pay thanksgiving;
+	Pay christmas;
+
 };
 
 void Employee::overtime(float howMuchTime, bool holidays)
 {
-    if (holidays == true)
-    {
-        thanksgiving.timeAndAhHalf();
-        christmas.timeAndAhHalf();
-    }
-    else
-    {
-        christmas.halfBusinessDay();
-        thanksgiving.halfBusinessDay();
-    }
-    
-    holidayPay += thanksgiving.timeAndAhHalf() + christmas.timeAndAhHalf();
+	if (holidays == true)
+	{
+		thanksgiving.timeAndAhHalf();
+		christmas.timeAndAhHalf();
+	}
+	else
+	{
+		christmas.halfBusinessDay();
+		thanksgiving.halfBusinessDay();
+	}
+
+	holidayPay += thanksgiving.timeAndAhHalf() + christmas.timeAndAhHalf();
 }
 
 /*
@@ -180,17 +212,32 @@ void Employee::overtime(float howMuchTime, bool holidays)
 
 struct School
 {
-    int classrooms = 6;
-    int courses = 3;
-    int test = 24;
-    
-    struct Student
-    {
-        bool female = true;
-        char grade = 'B';
-    };
-    
-    void testScore();
+	int classrooms = 6;
+	int courses = 3;
+	int test = 24;
+
+	struct Student
+	{
+		bool female = true;
+		char grade = 'B';
+		int classmates;
+		int hoursOfStudying;
+		float lunchbreak;
+
+		Student()
+		{
+			classmates = 15;
+			hoursOfStudying = 3;
+			lunchbreak = 0.42f;
+		}
+
+		void Melissa(Student student)
+		{
+			std::cout << "Student::classmates: " << student.lunchbreak << std::endl;
+		}
+	};
+
+	void testScore();
 };
 
 /*
@@ -199,11 +246,24 @@ struct School
 
 struct Television
 {
-    bool smartTV = true;
-    int hdmiPorts = 4;
-    bool visio = true;
-    
-    void cableProvider();
+	bool smartTV = true;
+	int hdmiPorts = 4;
+	bool visio = true;
+	int channels;
+	int cableCompany;
+	bool hasRemote;
+
+	Television()
+	{
+		channels = 72;
+		cableCompany = 0;
+		hasRemote = true;
+	}
+
+	void Chris(Television television)
+	{
+		std::cout << "Television::channels: " << television.cableCompany << std::endl;
+	}
 };
 
 /*
@@ -212,10 +272,26 @@ struct Television
 
 struct Compressor
 {
-    int rangeOfCompression = 20;
-    bool vuMeter = true;
-    int threshold = -20;
-    int makeUpGain = 20;
+	int rangeOfCompression = 20;
+	bool vuMeter = true;
+	int threshold = -20;
+	int makeUpGain = 20;
+	int attackRange;
+	int releaseRange;
+	int inputs;
+
+	Compressor()
+	{
+		attackRange = 7;
+		releaseRange = 7;
+		inputs = 3;
+	}
+
+	void elevenSeventySix(Compressor compressor)
+	{
+		std::cout << "Compressor::inputs: " << compressor.attackRange << std::endl;
+	}
+
 };
 
 /*
@@ -224,8 +300,21 @@ struct Compressor
 
 struct Typewriter
 {
-    int age = 32;
-    int lettersWritten = 0;
+	int age = 32;
+	int lettersWritten = 0;
+	bool ink;
+	int scrollsOfPaper;
+
+	Typewriter()
+	{
+		ink = true;
+		scrollsOfPaper = 3;
+	}
+
+	void Diana(Typewriter typewriter)
+	{
+		std::cout << "Typewriter::scrollsOfPaper: " << typewriter.ink << std::endl;
+	}
 };
 
 /*
@@ -234,17 +323,24 @@ struct Typewriter
 
 struct VideoGame
 {
-    int players = 1;
-    bool rpg = true;
-    char name = 'L';
-    
-    struct Character
-    {
-        bool greenOutfit = true;
-        bool rescuePrincess = true;
-    };
-    
-    Character link;
+	int players = 1;
+	bool rpg = true;
+	char name = 'L';
+
+	struct Character
+	{
+		bool greenOutfit = true;
+		bool rescuePrincess = true;
+		int b;
+
+		Character() { b = 23; }
+		void fightingSkill()
+		{
+			std::cout << "Character::fightingSkill() " << b << std::endl;
+		}
+	};
+
+	Character link;
 };
 
 /*
@@ -253,9 +349,9 @@ struct VideoGame
 
 struct Rack
 {
-    int equipment = 8;
-    int rackSpace = 15;
-    bool emptySpaces = true;
+	int equipment = 8;
+	int rackSpace = 15;
+	bool emptySpaces = true;
 };
 
 /*
@@ -264,7 +360,7 @@ struct Rack
 
 struct Male
 {
-    int fatigueLevel = 8;
-    bool readyToGiveUp = false;
-    char motivationLevel = 'A';
+	int fatigueLevel = 8;
+	bool readyToGiveUp = false;
+	char motivationLevel = 'A';
 };
