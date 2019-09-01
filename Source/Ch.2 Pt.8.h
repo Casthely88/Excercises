@@ -23,7 +23,6 @@
  */
 
 #include <iostream>
-#include <string>
 
 struct Foo  // my user defined type
 {
@@ -35,11 +34,7 @@ struct Foo  // my user defined type
 	}
 };
 
-int main()
-{
-	Foo foo;              //4) instantiating a Foo in main()
-	foo.printThing();     //4) calling a member function of the instance that was instantiated.
-}
+
 
 struct Foot
 {
@@ -90,40 +85,35 @@ void Person::run(int howFast, bool startWithLeftFoot)
 }
 
 /*
- 1)
- */
+1)
+*/
 
 struct Plane
 {
 	double weight = 386.265;
-	int seats;
+	int seats = 286;
 	int litersOfFuel = 184;
+	int crewMembers;
+	float milesFlying;
 
 	Plane()
 	{
-		seats = 286;
+		crewMembers = 8;
+		milesFlying = 663.9f;
+	}
+	void marcus()
+	{
+		std::cout << "This is your captain Marcus speaking" << std::endl;
 	}
 
-	struct Pilot
-	{
-		int numberOfPilots = 2;
-		bool sleepy = false;
-		int flights = 386;
-	};
 
-	void Marcus(Pilot pilot)
-	{
-
-		std::cout << "Plane::weight " << pilot.sleepy << std::endl;
-
-	};
 };
 
 /*
  2)
  */
 
-struct Athelete
+struct Athlete
 {
 	int age;
 	int points = 15386;
@@ -132,20 +122,17 @@ struct Athelete
 	bool layups;
 	float pointsPerGame;
 
-	Athelete()
+	Athlete()
 	{
 		age = 30;
 		pointsPerGame = 24.6f;
 		layups = true;
 	}
 
-	void Alan(Athelete athelete)
-
+	void alan()
 	{
-		std::cout << "Athelete::pointPerGame: " << athelete.age << std::endl;
+		std::cout << "I gotta work on my game" << std::endl;
 	}
-
-	void scoring();
 
 };
 
@@ -178,9 +165,9 @@ struct Employee
 		lengthOfEmployment = 15;
 	}
 
-	void Alan(Employee employee)
+	void alex()
 	{
-		std::cout << "Employee::name: " << employee.lengthOfEmployment << std::endl;
+		std::cout << "My paycheck is going to be fat!!!" << std::endl;
 	}
 
 	void overtime(float howMuchTime, bool holidays);
@@ -231,13 +218,12 @@ struct School
 			lunchbreak = 0.42f;
 		}
 
-		void Melissa(Student student)
+		void melissa()
 		{
-			std::cout << "Student::classmates: " << student.lunchbreak << std::endl;
+			std::cout << "I hate this table" << std::endl;
 		}
 	};
 
-	void testScore();
 };
 
 /*
@@ -260,9 +246,9 @@ struct Television
 		hasRemote = true;
 	}
 
-	void Chris(Television television)
+	void chris()
 	{
-		std::cout << "Television::channels: " << television.cableCompany << std::endl;
+		std::cout << "Time to watch my shows" << std::endl;
 	}
 };
 
@@ -287,9 +273,9 @@ struct Compressor
 		inputs = 3;
 	}
 
-	void elevenSeventySix(Compressor compressor)
+	void elevenSeventySix()
 	{
-		std::cout << "Compressor::inputs: " << compressor.attackRange << std::endl;
+		std::cout << "This KT-76 is great!!!" << std::endl;
 	}
 
 };
@@ -311,9 +297,9 @@ struct Typewriter
 		scrollsOfPaper = 3;
 	}
 
-	void Diana(Typewriter typewriter)
+	void diana()
 	{
-		std::cout << "Typewriter::scrollsOfPaper: " << typewriter.ink << std::endl;
+		std::cout << "I've got only 3 pages left" << std::endl;
 	}
 };
 
@@ -331,16 +317,19 @@ struct VideoGame
 	{
 		bool greenOutfit = true;
 		bool rescuePrincess = true;
+		int fightingSkill;
 		int b;
 
-		Character() { b = 23; }
-		void fightingSkill()
+		Character()
 		{
-			std::cout << "Character::fightingSkill() " << b << std::endl;
+			fightingSkill = 86;
+			b = 23;
+		}
+		void link()
+		{
+			std::cout << "Gotta get to Zelda before it's too late" << std::endl;
 		}
 	};
-
-	Character link;
 };
 
 /*
@@ -364,3 +353,21 @@ struct Male
 	bool readyToGiveUp = false;
 	char motivationLevel = 'A';
 };
+
+int main()
+{
+	Plane plane;
+	Athlete athlete;
+	Employee employee;
+	Television television;
+	Compressor compressor;
+	Typewriter typewriter;
+
+	plane.marcus();
+	athlete.alan();
+	employee.alex();
+	television.chris();
+	compressor.elevenSeventySix();
+	typewriter.diana();
+
+}
